@@ -9,12 +9,14 @@ export async function main(options: ApplicationConfig = {}) {
   await app.start();
 
 
+
   const url = app.restServer.url;
   console.log(`Server is running at ${url}`);
   console.log(`Try ${url}/ping`);
 
   return app;
 }
+
 
 if (require.main === module) {
   // Run the application
@@ -32,8 +34,6 @@ if (require.main === module) {
         // useful when used with OpenAPI-to-GraphQL to locate your application
         setServersFromRequest: true,
       },
-      protocol: 'https',
-
       // cors: {
       //   origin: '*',
       //   methods: 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
