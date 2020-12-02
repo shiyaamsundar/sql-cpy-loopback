@@ -152,7 +152,7 @@ export class AdminController {
 
   ): Promise<Admin> {
     console.log('gmail:',gmail)
-    const res:any=await this.adminRepository.find({where:{'email':email}});
+    const res:any=await this.adminRepository.find({where:{'email':gmail}});
     return res
   }
 
