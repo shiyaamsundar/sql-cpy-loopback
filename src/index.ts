@@ -32,14 +32,22 @@ if (require.main === module) {
         // useful when used with OpenAPI-to-GraphQL to locate your application
         setServersFromRequest: true,
       },
-      cors: {
+      // cors: {
+      //   origin: '*',
+      //   methods: 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+      //   preflightContinue: true,
+      //   optionsSuccessStatus: 204,
+      //   maxAge: 86400,
+      //   credentials: true
+      // },
+     cors: {
         origin: '*',
-        methods: 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
-        preflightContinue: true,
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+        preflightContinue: false,
         optionsSuccessStatus: 204,
         maxAge: 86400,
-        credentials: true
-      },
+        credentials: true,
+      }
     },
   };
   main(config).catch(err => {
